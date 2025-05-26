@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Formular Înmatriculare Vehicul</title>
+</head>
+
+<body bgcolor="#f0f0f0">
+<center>
+    <h1><font color="#a202ff"><b>Formular de Înmatriculare Vehicul</b></font></h1>
+</center>
+
+<img src="car.png" alt="Imagine vehicul" width="200" height="150" title="Înmatriculare Vehicul">
+<p><strong>Completați toate câmpurile obligatorii.</strong></p>
+
+<form action="procesare.php" method="post">
+    <fieldset>
+        <legend><b>1. Datele Solicitantului</b></legend>
+        <p><b>Nume și Prenume:</b> <input type="text" name="nume" maxlength="50"></p>
+        <p><b>CNP:</b> <input type="text" name="cnp" maxlength="13"></p>
+        <p><b>Adresa:</b> <textarea name="adresa" rows="3" cols="30"></textarea></p>
+        <p><b>Telefon:</b> <input type="text" name="telefon" maxlength="10"></p>
+        <p><b>Locație:</b> <input type="text" name="locatie" maxlength="100"></p>
+        <p><b>Fax:</b> <input type="text" name="fax" maxlength="10"></p>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>2. Datele Vehiculului</b></legend>
+        <p><b>Marca:</b> <input type="text" name="marca"></p>
+        <p><b>Model:</b> <input type="text" name="model"></p>
+        <p><b>Număr de Identificare (VIN):</b> <input type="text" name="vin" size="17"></p>
+        <p><b>Culoare:</b> <input type="text" name="culoare"></p>
+        <p><b>Tip combustibil:</b>
+            <select name="combustibil">
+                <option value="benzina" selected>Benzină</option>
+                <option value="motorina">Motorină</option>
+                <option value="electric">Electric</option>
+                <option value="hibrid">Hibrid</option>
+            </select>
+        </p>
+        <p><b>Număr locuri:</b>
+            <input type="text" name="locuri" size="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </p>
+
+
+    </fieldset>
+
+    <fieldset>
+        <legend><b>3. Tipul Solicitării</b></legend>
+        <p><input type="radio" name="tip" value="nou" checked> Înmatriculare vehicul nou</p>
+        <p><input type="radio" name="tip" value="second-hand"> Înmatriculare vehicul second-hand</p>
+        <p><input type="radio" name="tip" value="transcriere"> Transcriere drept de proprietate</p>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>4. Documente Necesare</b></legend>
+        <p><input type="checkbox" name="documente" value="civ" checked> CIV</p>
+        <p><input type="checkbox" name="documente" value="factura"> Factură</p>
+        <p><input type="checkbox" name="documente" value="rca"> RCA</p>
+        <p><input type="checkbox" name="documente" value="itp"> ITP</p>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>5. Informații Suplimentare</b></legend>
+        <div>
+            <p><b>Observații:</b> <textarea name="observatii" cols="40" rows="4"></textarea></p>
+        </div>
+
+    </fieldset>
+
+    <br>
+    <p>
+        <input type="submit" value="Trimite Cererea"> &nbsp;
+        <input type="reset" value="Resetează Formularul">
+    </p>
+</form>
+
+<table border="1" width="100%">
+    <tr bgcolor="#ADD8E6">
+        <th colspan="2">Informații Suplimentare</th>
+    </tr>
+    <tr>
+        <td align="center" valign="middle" rowspan="2">Taxe</td>
+        <td align="center" valign="middle">Documente Necesare</td>
+    </tr>
+    <tr>
+        <td>
+            <table border="1" width="100%">
+                <tr><td>Carte de Identitate</td></tr>
+                <tr><td>Factură/Contract</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<ul>
+    <li>Acte necesare
+        <ul>
+            <li>Carte de Identitate</li>
+            <li>Contract de vânzare</li>
+        </ul>
+    </li>
+    <li>Reguli de circulație</li>
+    <li>Termene legale</li>
+</ul>
+
+<ol type="A" start="3">
+    <li>Plata taxei</li>
+    <li>Depunerea actelor</li>
+    <li>Ridicarea documentelor
+        <ol type="I">
+            <li>Verificare dosar</li>
+            <li>Primire certificat</li>
+        </ol>
+    </li>
+</ol>
+<p><b>Documente atașate:</b>
+    <select name="documente_atasate" multiple>
+        <option value="civ">CIV</option>
+        <option value="factura">Factură</option>
+        <option value="rca">RCA</option>
+    </select>
+</p>
+
+<p>Mai multe informații pe <a href="https://www.example.com" target="_blank">site-ul oficial</a>.</p>
+<p><b>Cod de verificare:</b> <input type="text" value="123ABC" readonly></p>
+<p><b>Cod secret:</b> <input type="text" value="XYZ123" disabled></p>
+
+<noscript>
+    <p style="color: red; font-weight: bold;">Pentru o experiență optimă, activați JavaScript în browser.</p>
+</noscript>
+</body>
+
+</html>

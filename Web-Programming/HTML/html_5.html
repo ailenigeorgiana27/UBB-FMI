@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formular Înmatriculare Vehicul</title>
+</head>
+
+<body>
+<h1><b>Formular de Înmatriculare Vehicul</b></h1>
+<img src="car.png" alt="Imagine vehicul" width="200" height="150" title="Înmatriculare Vehicul">
+<p><strong>Completați toate câmpurile obligatorii.</strong></p>
+
+<form action="procesare.php" method="post">
+    <fieldset>
+        <legend><b>1. Datele Solicitantului</b></legend>
+        <p><b>Nume și Prenume:</b> <input type="text" name="nume" maxlength="50" required></p>
+        <p><b>CNP:</b> <input type="text" name="cnp" maxlength="13" required></p>
+        <p><b>Adresa:</b> <textarea name="adresa" rows="3" cols="30" required></textarea></p>
+        <p><b>Telefon:</b> <input type="tel" name="telefon" maxlength="10" required></p>
+        <p><b>Locație:</b> <input type="text" name="locatie" maxlength="100" required></p>
+        <p><b>Fax:</b> <input type="text" name="fax" maxlength="10"></p>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>2. Datele Vehiculului</b></legend>
+        <p><b>Marca:</b> <input type="text" name="marca" required></p>
+        <p><b>Model:</b> <input type="text" name="model" required></p>
+        <p><b>Număr de Identificare (VIN):</b> <input type="text" name="vin" size="17" required></p>
+        <p><b>Culoare:</b> <input type="text" name="culoare" required></p>
+        <p><b>Tip combustibil:</b>
+            <select name="combustibil" required>
+                <option value="" disabled selected>Selectați un tip</option>
+                <option value="benzina">Benzină</option>
+                <option value="motorina">Motorină</option>
+                <option value="electric">Electric</option>
+                <option value="hibrid">Hibrid</option>
+            </select>
+        </p>
+        <p><b>Număr locuri:</b> <input type="number" name="locuri" max="7" step="1"></p>
+
+    </fieldset>
+
+    <fieldset>
+        <legend><b>3. Tipul Solicitării</b></legend>
+        <p><input type="radio" name="tip" value="nou" checked> Înmatriculare vehicul nou</p>
+        <p><input type="radio" name="tip" value="second-hand"> Înmatriculare vehicul second-hand</p>
+        <p><input type="radio" name="tip" value="transcriere"> Transcriere drept de proprietate</p>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>4. Documente Necesare</b></legend>
+        <p><input type="checkbox" name="documente" value="civ" checked> CIV</p>
+        <p><input type="checkbox" name="documente" value="factura"> Factură</p>
+        <p><input type="checkbox" name="documente" value="rca"> RCA</p>
+        <p><input type="checkbox" name="documente" value="itp"> ITP</p>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>5. Informații Suplimentare</b></legend>
+        <div>
+            <p><b>Observații:</b> <textarea name="observatii" cols="40" rows="4"></textarea></p>
+        </div>
+
+    </fieldset>
+
+    <br>
+    <p>
+        <input type="submit" value="Trimite Cererea"> &nbsp;
+        <input type="reset" value="Resetează Formularul">
+    </p>
+</form>
+
+<table>
+    <tr>
+        <th colspan="2">Informații Suplimentare</th>
+    </tr>
+    <tr>
+        <td rowspan="2">Taxe</td>
+        <td>Documente Necesare</td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr><td>Carte de Identitate</td></tr>
+                <tr><td>Factură/Contract</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<ul>
+    <li>Acte necesare
+        <ul>
+            <li>Carte de Identitate</li>
+            <li>Contract de vânzare</li>
+        </ul>
+    </li>
+    <li>Reguli de circulație</li>
+    <li>Termene legale</li>
+</ul>
+
+<ol type="A" start="3">
+    <li>Plata taxei</li>
+    <li>Depunerea actelor</li>
+    <li>Ridicarea documentelor
+        <ol type="I">
+            <li>Verificare dosar</li>
+            <li>Primire certificat</li>
+        </ol>
+    </li>
+</ol>
+<p><b>Documente atașate:</b>
+    <select name="documente_atasate" multiple>
+        <option value="civ">CIV</option>
+        <option value="factura">Factură</option>
+        <option value="rca">RCA</option>
+    </select>
+</p>
+
+<p>Mai multe informații pe <a href="https://www.example.com" target="_blank">site-ul oficial</a>.</p>
+<p><b>Cod de verificare:</b> <input type="text" value="123ABC" readonly></p>
+<p><b>Cod secret:</b> <input type="text" value="XYZ123" disabled></p>
+
+<noscript>
+    <p>Pentru o experiență optimă, activați JavaScript în browser.</p>
+</noscript>
+</body>
+
+</html>
